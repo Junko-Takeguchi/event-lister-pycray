@@ -1,51 +1,27 @@
-import { showBetaFeature } from '@repo/feature-flags';
-import { getDictionary } from '@repo/internationalization';
-import { createMetadata } from '@repo/seo/metadata';
-import type { Metadata } from 'next';
-import { Cases } from './components/cases';
-import { CTA } from './components/cta';
-import { FAQ } from './components/faq';
-import { Features } from './components/features';
-import { Hero } from './components/hero';
-import { Stats } from './components/stats';
-import { Testimonials } from './components/testimonials';
+'use client';
 
-type HomeProps = {
-  params: Promise<{
-    locale: string;
-  }>;
-};
+import Link from 'next/link';
 
-export const generateMetadata = async ({
-  params,
-}: HomeProps): Promise<Metadata> => {
-  const { locale } = await params;
-  const dictionary = await getDictionary(locale);
-
-  return createMetadata(dictionary.web.home.meta);
-};
-
-const Home = async ({ params }: HomeProps) => {
-  const { locale } = await params;
-  const dictionary = await getDictionary(locale);
-  const betaFeature = await showBetaFeature();
-
+export default function HomePage() {
   return (
-    <>
-      {betaFeature && (
-        <div className="w-full bg-black py-2 text-center text-white">
-          Beta feature now available
-        </div>
-      )}
-      <Hero dictionary={dictionary} />
-      <Cases dictionary={dictionary} />
-      <Features dictionary={dictionary} />
-      <Stats dictionary={dictionary} />
-      <Testimonials dictionary={dictionary} />
-      <FAQ dictionary={dictionary} />
-      <CTA dictionary={dictionary} />
-    </>
-  );
-};
+    <div className="flex min-h-screen items-center justify-center bg-gray-50 p-6">
+      <div className="w-full max-w-xl space-y-6 text-center">
+        <h1 className="font-bold text-4xl text-gray-800">
+          Welcome to Event Manager
+        </h1>
+        <p className="text-gray-600 text-lg">
+          Easily create, search, and manage your events in one place.
+        </p>
 
-export default Home;
+        <div className="flex justify-center">
+          <Link
+            href="/events"
+            className="rounded-xl bg-blue-600 px-6 py-3 font-medium text-lg text-white shadow transition hover:bg-blue-700"
+          >
+            Go to Events
+          </Link>
+        </div>
+      </div>
+    </div>
+  );
+}

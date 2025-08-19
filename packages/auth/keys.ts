@@ -4,7 +4,7 @@ import { z } from 'zod';
 export const keys = () =>
   createEnv({
     server: {
-      CLERK_SECRET_KEY: z.string().startsWith('sk_'),
+      CLERK_SECRET_KEY: z.string().startsWith(''),
       CLERK_WEBHOOK_SECRET: z.string().startsWith('whsec_').optional(),
     },
     client: {
