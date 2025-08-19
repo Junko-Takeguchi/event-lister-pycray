@@ -1,31 +1,45 @@
-# ▲ / next-forge
 
-**Production-grade Turborepo template for Next.js apps.**
+# Event Lister
 
-<div>
-  <img src="https://img.shields.io/npm/dy/next-forge" alt="" />
-  <img src="https://img.shields.io/npm/v/next-forge" alt="" />
-  <img src="https://img.shields.io/github/license/vercel/next-forge" alt="" />
-</div>
+A simple event management app built with **Next.js (App Router)** and **TailwindCSS**.  
+You can add, search, and delete events — all persisted locally in your browser’s `localStorage`.
 
-## Overview
+---
 
-[next-forge](https://github.com/vercel/next-forge) is a [Next.js](https://nextjs.org/) project boilerplate for modern web application. It is designed to be a comprehensive starting point for new apps, providing a solid, opinionated foundation with a minimal amount of configuration.
+## 🚀 Getting Started
 
-## Getting Started
+### 1. Clone the repository
+```bash
+git clone https://github.com/Junko-Takeguchi/event-lister-pycray.git
+cd event-lister-pycray
+````
 
-Clone the repo using:
+### 2. Install dependencies
 
-```sh
-npx next-forge@latest init
+At the project root, run:
+
+```bash
+pnpm install
 ```
 
-Then read the [docs](https://www.next-forge.com/docs) for more information.
+### 3. Start the web app
 
-## Contributors
+Navigate to the web app folder and run the development server:
 
-<a href="https://github.com/vercel/next-forge/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=vercel/next-forge" />
-</a>
+```bash
+cd apps/web
+pnpm dev
+```
 
-Made with [contrib.rocks](https://contrib.rocks).
+### 4. Open in browser
+
+The app will be running at:
+
+```
+http://localhost:3001
+```
+### 5. Navigate to /events
+The assignment's output is at 
+```
+http://localhost:3001/events
+```
