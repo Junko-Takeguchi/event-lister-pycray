@@ -3,6 +3,7 @@
 
 A simple event management app built with **Next.js (App Router)** and **TailwindCSS**.  
 You can add, search, and delete events — all persisted locally in your browser’s `localStorage`.
+This repository also contains mandatory env variables required to run the next-forge web project 
 
 ---
 
